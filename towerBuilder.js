@@ -1,21 +1,43 @@
 function towerBuilder(nFloors) {
-  let build = "*";
-  let tower = [];
+  let tower = new Array(nFloors);
+  let starsStack = [];
 
-  for (let i = 0; i < nFloors; i++) {
-    tower.push(build);
-    build = " *" + build + "* ";
+  // From left to center
+  for (let i = 1; i <= nFloors; i++) {
+    // Fill the starsStack
+    for (let j = 0; j < i; j++) {
+      starsStack.push("*");
+    }
+    // Fiil tower from bottom
+    for (let i = tower.length - 1; i >= 0; i--) {
+      if (!tower[i]) {
+        tower[i] = "";
+      }
+      const star = starsStack.pop();
+      if (star) {
+        tower[i] = tower[i] + "*";
+      } else {
+        tower[i] = tower[i] + " ";
+      }
+    }
   }
 
-  //   const newTower = tower.map((elem) => " " + elem + " ");
-
-  //   return newTower;
-
-  //   let buildWithSpace;
-  //   for (let i = 0; i < tower.length; i++) {
-  //     buildWithSpace = tower[i] + "  ";
-  //     tower[i];
-  //   }
+  // From center to right
+  for (let i = nFloors - 1; i >= 1; i--) {
+    // Fill the starsStack
+    for (let j = 0; j < i; j++) {
+      starsStack.push("*");
+    }
+    // Fiil tower from bottom
+    for (let i = tower.length - 1; i >= 0; i--) {
+      const star = starsStack.pop();
+      if (star) {
+        tower[i] = tower[i] + "*";
+      } else {
+        tower[i] = tower[i] + " ";
+      }
+    }
+  }
 
   return tower;
 }
