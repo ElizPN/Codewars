@@ -24,4 +24,3 @@ function arrAdder(arr) {
 
 let res = arrAdder(arrMatrix);
 console.log(res);
-console.log("Just Live Life Man");
