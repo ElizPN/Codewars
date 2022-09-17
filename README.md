@@ -1,2 +1,2 @@
 # Codewars
-Test
+There are my solutions of some challenges on Codewars. 
