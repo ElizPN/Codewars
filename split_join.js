@@ -1,13 +1,15 @@
 function splitAndMerge(string, separator) {
   let arrWords = string.split(" ");
+  let newArrWords = [];
   for (let word of arrWords) {
-    // do not enter to loop
     word = word.split("");
-    // return word;
+    word = word.join(separator);
+    newArrWords.push(word);
   }
-  arrWords = arrWords.join(separator);
-  return arrWords;
+  console.log(newArrWords);
+  newArrWords = newArrWords.join(" ");
+  return newArrWords;
 }
 
-let res = splitAndMerge("My name is John", ".");
+let res = splitAndMerge("My name is John", " ");
 console.log(res);
