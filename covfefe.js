@@ -12,4 +12,4 @@ function covfefe(str) {
 
 console.log(covfefe("double space "));
 
-// should add check for double space
+
