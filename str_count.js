@@ -1,7 +1,5 @@
-function strCount(str, letter) {
-
+export function strCount(str, letter) {
   let count = 0
-
   for (let i = 0; i < str.length; i++) {
     if (str[i] === letter) {
     count ++
@@ -10,5 +8,5 @@ function strCount(str, letter) {
   return count
 }
 
-let res = strCount("hohoh", "o");
+let res = strCount("8999989", "9");
 console.log(res);
