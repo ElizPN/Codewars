@@ -1,13 +1,14 @@
 function strCount(str, letter) {
-  let arrLetters = [];
+
+  let count = 0
 
   for (let i = 0; i < str.length; i++) {
     if (str[i] === letter) {
-     arrLetters = [...arrLetters, letter]
+    count ++
     }
   }
-  return arrLetters.length;
+  return count
 }
 
-let res = strCount("hohoh", "h");
+let res = strCount("hohoh", "o");
 console.log(res);
