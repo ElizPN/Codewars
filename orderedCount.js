@@ -10,28 +10,22 @@ function strCount(str, letter) {
   return count;
 }
 
+
 const orderedCount = function (text) {
-  let mainRes = [];
+  let resObj = {};
+  let num = 0;
 
   for (let i = 0; i < text.length; i++) {
-    let interResult = [];
-    let num = strCount(text, text[i]);
-    interResult = [...interResult, text[i], num];
-    console.log(interResult);
+    num = strCount(text, text[i]);
+    let letter = text[i];
 
-    mainRes = [...mainRes, [interResult]];
+    if (!resObj.hasOwnProperty(letter)) {
+      resObj[letter] = num;
+    }
+    console.log(resObj);
   }
 
-  //   console.log(mainRes);
-
-  const checkIsEqual = (curentRes) => interResult == curentRes;
-  let filteredArr = mainRes.filter(checkIsEqual);
-
-  return filteredArr;
+  return Object.entries(resObj);
 };
 
-console.log(orderedCount("90909"));
-
-// let arr = [[1], [2], [1], [2], [1]];
-// let uniq = [...new Set(arr)];
-// console.log(uniq);
+console.log(orderedCount("909009877556565"));
