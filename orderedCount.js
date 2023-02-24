@@ -10,22 +10,25 @@ function strCount(str, letter) {
   return count;
 }
 
-
 const orderedCount = function (text) {
-  let resObj = {};
+  let mainResult = [];
+  let arrStorage = [];
   let num = 0;
 
   for (let i = 0; i < text.length; i++) {
-    num = strCount(text, text[i]);
+    let interResult = [];
     let letter = text[i];
+    num = strCount(text, letter);
 
-    if (!resObj.hasOwnProperty(letter)) {
-      resObj[letter] = num;
+    // check does letter exist in arrStorage. If no - add letter to arrStorage.
+    if (!arrStorage.includes(letter)) {
+      arrStorage.push(letter);
+      interResult = [...interResult, letter, num];
+      mainResult = [...mainResult, interResult];
     }
-    console.log(resObj);
   }
 
-  return Object.entries(resObj);
+  return mainResult;
 };
 
 console.log(orderedCount("909009877556565"));
