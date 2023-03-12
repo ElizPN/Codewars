@@ -18,4 +18,6 @@ function addBinary(a, b) {
   const sum = a + b;
   return countBinary(sum);
 }
-console.log(addBinary(9, 4));
+
+const result = addBinary(9, 4);
+console.log(result);
